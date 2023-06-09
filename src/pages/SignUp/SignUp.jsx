@@ -52,7 +52,7 @@ const SignUp = () => {
 						Name
 					</label>
 					<input
-						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500 border-b-4 border-b-orange-500 ${
 							errors.name ? 'border-red-500' : ''
 						}`}
 						type='text'
@@ -70,7 +70,7 @@ const SignUp = () => {
 						Email
 					</label>
 					<input
-						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500 border-b-4 border-b-orange-500 ${
 							errors.email ? 'border-red-500' : ''
 						}`}
 						type='email'
@@ -94,7 +94,7 @@ const SignUp = () => {
 						Photo Url
 					</label>
 					<input
-						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500 border-b-4 border-b-orange-500 ${
 							errors.email ? 'border-red-500' : ''
 						}`}
 						type='text'
@@ -114,7 +114,7 @@ const SignUp = () => {
 						Password
 					</label>
 					<input
-						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline ${
+						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500 border-b-4 border-b-orange-500 ${
 							errors.password ? 'border-red-500' : ''
 						}`}
 						type='password'
@@ -153,7 +153,7 @@ const SignUp = () => {
 						Confirm Password
 					</label>
 					<input
-						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline ${
+						className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500 border-b-4 border-b-orange-500 ${
 							errors.confirmPassword ? 'border-red-500' : ''
 						}`}
 						type='password'

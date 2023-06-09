@@ -13,7 +13,6 @@ const Login = () => {
 	const location = useLocation();
 	const from = location?.state?.from?.pathname || '/';
 	const [show, setShow] = useState(false);
-	const [check, setCheck] = useState();
 
 	const handleLogin = (data) => {
 		signIn(data.email, data.password).then((result) => {
@@ -63,13 +62,13 @@ const Login = () => {
 							<div className='mb-4'>
 								<label
 									htmlFor='email'
-									className='block mb-2 text-sm font-medium text-gray-700'>
+									className='block mb-2 text-sm font-medium text-gray-700 '>
 									Email
 								</label>
 								<input
 									type='email'
 									id='email'
-									className='w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:border-indigo-500'
+									className='w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:border-indigo-500 border-b-4 border-b-orange-500'
 									{...register('email', { required: true })}
 									placeholder='Enter your email'
 								/>
@@ -83,7 +82,7 @@ const Login = () => {
 								<input
 									type={show ? 'text' : 'password'}
 									id='password'
-									className='w-full mb-2 px-3 py-2 border rounded shadow-sm focus:outline-none focus:border-indigo-500'
+									className='w-full mb-2 px-3 py-2 border rounded shadow-sm focus:outline-none focus:border-indigo-500 border-b-4 border-b-orange-500'
 									{...register('password', { required: true })}
 									placeholder='Enter your password'
 								/>
