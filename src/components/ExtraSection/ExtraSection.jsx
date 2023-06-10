@@ -5,7 +5,7 @@ import team3 from '../../assets/images/team3.jpg';
 const ExtraSection = () => {
 	return (
 		<section className='py-10 bg-white sm:py-16 lg:py-24 w-full'>
-			<div className='px-4 w-full   bg-yellow-400 p-4'>
+			<div className='px-4 w-full  lg:px-8  bg-yellow-400 p-4'>
 				<div className='max-w-2xl mx-auto text-center'>
 					<h2 className='text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl'>
 						We make you want to dance...right now!
@@ -19,7 +19,7 @@ const ExtraSection = () => {
 					<div>
 						<a href='#' title='' className='block aspect-w-4 aspect-h-3'>
 							<img
-								className='object-cover w-full h-full rounded-full'
+								className='object-cover w-3/4 h-full rounded-full'
 								src={team1}
 								alt=''
 							/>
@@ -36,16 +36,12 @@ const ExtraSection = () => {
 							Mirum est notare quam littera gothica, quam putamus.
 						</p>
 						<div className='h-0 mt-6 mb-4 border-t-2 border-gray-200 border-dashed'></div>
-						<span className='block text-sm font-bold tracking-widest text-gray-500 uppercase'>
-							{' '}
-							Martin Jones . June 12, 2021{' '}
-						</span>
 					</div>
 
 					<div>
 						<a href='#' title='' className='block aspect-w-4 aspect-h-3'>
 							<img
-								className='object-cover w-full h-full rounded-full'
+								className='object-cover w-3/4 h-full rounded-full'
 								src={team2}
 								alt=''
 							/>
@@ -62,16 +58,12 @@ const ExtraSection = () => {
 							Mirum est notare quam littera gothica, quam putamus.
 						</p>
 						<div className='h-0 mt-6 mb-4 border-t-2 border-gray-200 border-dashed'></div>
-						<span className='block text-sm font-bold tracking-widest text-gray-500 uppercase'>
-							{' '}
-							Martin Jones . June 12, 2021{' '}
-						</span>
 					</div>
 
 					<div>
 						<a href='#' title='' className='block aspect-w-4 aspect-h-3'>
 							<img
-								className='object-cover w-full h-full rounded-full'
+								className='object-cover w-3/4 h-full rounded-full'
 								src={team3}
 								alt=''
 							/>
@@ -88,10 +80,6 @@ const ExtraSection = () => {
 							Mirum est notare quam littera gothica, quam putamus.
 						</p>
 						<div className='h-0 mt-6 mb-4 border-t-2 border-gray-200 border-dashed'></div>
-						<span className='block text-sm font-bold tracking-widest text-gray-500 uppercase'>
-							{' '}
-							Martin Jones . June 12, 2021{' '}
-						</span>
 					</div>
 				</div>
 			</div>

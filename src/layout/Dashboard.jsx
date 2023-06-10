@@ -1,6 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hook/useAdmin';
 import useAuth from '../hook/useAuth';
+import useInstructor from '../hook/useInstructor';
 import AdminNav from '../pages/AdminNav/AdminNav';
 import InstructorNav from '../pages/InstructorNav/InstructorNav';
 import UserNavbar from '../pages/UserNavbar/UserNavbar';
@@ -9,7 +10,8 @@ const Dashboard = () => {
 	const { user } = useAuth();
 	const [isAdmin] = useAdmin();
 	// console.log(isAdmin);
-	const isInstructor = false;
+	const [isInstructor] = useInstructor();
+	// console.log(isAdmin, isInstructor);
 	return (
 		<div className='grid grid-cols-12'>
 			<div className='h-screen col-span-4 p-3 space-y-2 w-60 dark:bg-gray-900 bg-slate-900 ml-24 text-white dark:text-gray-100'>

@@ -3,7 +3,7 @@ import { BiUserCheck, BiAlignJustify } from 'react-icons/bi';
 
 const AdminNav = () => {
 	return (
-		<div className=' my-10 h-full w-full'>
+		<>
 			<li>
 				<a
 					rel='noopener noreferrer'
@@ -26,7 +26,7 @@ const AdminNav = () => {
 			</li>
 
 			<br />
-		</div>
+		</>
 	);
 };
 
