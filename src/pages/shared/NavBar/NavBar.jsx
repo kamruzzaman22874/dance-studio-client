@@ -10,7 +10,7 @@ const NavBar = () => {
 			.catch((err) => console.log(err));
 	};
 	const navItem = (
-		<>
+		<div className='md:flex gap-10 items-center'>
 			<li className='bg-none'>
 				<ActiveLink to='/'>Home</ActiveLink>
 			</li>
@@ -30,7 +30,7 @@ const NavBar = () => {
 						</ActiveLink>
 					</li>
 					<div
-						className='avatar tooltip flex items-center gap-5 tooltip-bottom tooltip-secondary'
+						className='avatar ml-3 tooltip flex items-center mgap-5 tooltip-bottom tooltip-secondary'
 						data-tip={user.displayName}>
 						<div className='w-10 rounded-full cursor-pointer ring ring-primary ring-offset-base-100 ring-offset-2'>
 							<img src={user.photoURL} />
@@ -49,20 +49,11 @@ const NavBar = () => {
 					</ActiveLink>
 				</li>
 			)}
-			{/* <li>
-				<ActiveLink to='/contact'>Contact Us</ActiveLink>
-			</li>
-			<li>
-				<ActiveLink to='/dashboard'>Dashboard</ActiveLink>
-			</li>
-			<li>
-				<ActiveLink to='/shop'>Our Shop</ActiveLink>
-			</li> */}
-		</>
+		</div>
 	);
 
 	return (
-		<div className='navbar fixed z-10 bg-opacity-100  bg-[#2B2A4C] justify-center text-white '>
+		<div className='navbar fixed z-10 bg-opacity-100 px-3 bg-[#2B2A4C] justify-center md:text-white '>
 			<div className='navbar-start'>
 				<div className='dropdown'>
 					<label tabIndex={0} className='lg:hidden'>
@@ -86,8 +77,12 @@ const NavBar = () => {
 						{navItem}
 					</ul>
 				</div>
-				<a className='normal-case '>
-					<img className='w-20 bg-white' src={logo} alt='' />
+				<a className='normal-case rounded'>
+					{/* <img className='w-20' src={logo} alt='' /> */}
+					<h2>
+						<span className='text-2xl mr-2 text-white'>DANCE</span>
+						<span className='text-blue-600 font-bold'>STUDIO</span>
+					</h2>
 				</a>
 			</div>
 			<div className='navbar-center hidden lg:flex'>

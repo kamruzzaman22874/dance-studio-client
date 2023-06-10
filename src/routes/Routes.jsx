@@ -39,6 +39,8 @@ export const router = createBrowserRouter([
 				path: '/dashboard/manageclasses',
 				element: <ManageClasses />,
 			},
+			
+
 		],
 	},
 ]);

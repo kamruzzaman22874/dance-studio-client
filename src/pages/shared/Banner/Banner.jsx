@@ -39,7 +39,7 @@ const Banner = () => {
 					</SwiperSlide>
 					<SwiperSlide>
 						<img className='h-screen w-full ' src={slide4} alt='' />
-						<div className='absolute top-1/2 right-60 text-white text-6xl  bg-transparent text-center'>
+						<div className='absolute top-1/2 right-60 text-white text-6xl bg-transparent text-center'>
 							<p className='uppercase'>We'll teach you to</p>
 							<h2 className='text-6xl uppercase'>Dance</h2>
 						</div>

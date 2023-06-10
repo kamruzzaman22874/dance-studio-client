@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 import { useQuery } from 'react-query';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
@@ -23,30 +22,43 @@ const ManageClasses = () => {
 				timer: 1500,
 			});
 		}
-		console.log(data);
 	});
+
+	const handleApproveStatus = (item) => {
+		axiosSecure.patch(`/classes/approve/${item._id}`).then((data) => {
+			console.log(data);
+		});
+	};
+	const handleDenyStatus = (item) => {
+		axiosSecure.patch(`/classes/approve/${item._id}`).then((data) => {
+			console.log(data);
+		});
+	};
+
 	return (
 		<div>
-			<div className='overflow-x-auto shadow-lg py-6 rounded'>
+			<div className=' shadow-lg py-6 rounded gap-3'>
 				<table className='table'>
 					{/* head */}
 					<thead>
 						<tr className='bg-slate-900 text-white text-lg font-semibold'>
+							<th>#</th>
 							<th>Image</th>
 							<th>Class Name</th>
 							<th>Instructor Name</th>
 							<th>Instructor Email</th>
 							<th>Available Seats</th>
 							<th>Price</th>
-							<th>Status</th>
+							<th className='flex justify-center'>Status</th>
 							<th>Action</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody className='overflow-x-hidden'>
 						{/* row 1 */}
-						{classes.map((item) => (
+						{classes.map((item, idx) => (
 							<>
 								<tr>
+									<td>{idx + 1}</td>
 									<td>
 										<div className='flex items-center space-x-3'>
 											<div className='avatar'>
@@ -64,9 +76,37 @@ const ManageClasses = () => {
 									<td>{item.instructorEmail}</td>
 									<td className='text-center'>{item.availableSeats}</td>
 									<td>{item.price}</td>
-									<td></td>
+									<td className='flex items-center mt-3 gap-2'>
+										<button className='btn btn-xs'>
+											{item.status ? item.status : 'pending'}
+										</button>
+									</td>
 									<th>
-										<button className='btn btn-ghost btn-xs'>details</button>
+										<button
+											disabled={item?.status}
+											onClick={() => handleApproveStatus(item)}
+											className='btn btn-ghost btn-xs bg-blue-800 text-white'>
+											Approve
+										</button>
+										<button
+											className='btn btn-ghost btn-xs w-full my-2'
+											onClick={() => handleDenyStatus(item)}
+											disabled={item?.status}>
+											Deny
+										</button>
+										<dialog id='my_modal_3' className='modal'>
+											<form method='dialog' className='modal-box'>
+												<button
+													htmlFor='my-modal-3'
+													className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>
+													✕
+												</button>
+												<h3 className='font-bold text-lg'>Hello!</h3>
+												<p className='py-4'>
+													Press ESC key or click on ✕ button to close
+												</p>
+											</form>
+										</dialog>
 									</th>
 								</tr>
 							</>

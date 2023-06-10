@@ -10,15 +10,13 @@ const PopularClasses = () => {
 				setClasses(data);
 			});
 	}, []);
-    return <div>
-        
-        {
-            classes.map(item => <PopularClass
-                key={item._id}
-                item={item}
-            ></PopularClass>)
-        }
-    </div>;
+	return (
+		<div className='grid md:grid-cols-3 gap-6 px-12'>
+			{classes.map((item) => (
+				<PopularClass key={item._id} item={item}></PopularClass>
+			))}
+		</div>
+	);
 };
 
 export default PopularClasses;

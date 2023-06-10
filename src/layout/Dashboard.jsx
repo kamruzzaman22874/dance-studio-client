@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+import useAdmin from '../hook/useAdmin';
 import useAuth from '../hook/useAuth';
 import AdminNav from '../pages/AdminNav/AdminNav';
 import InstructorNav from '../pages/InstructorNav/InstructorNav';
@@ -6,11 +7,12 @@ import UserNavbar from '../pages/UserNavbar/UserNavbar';
 
 const Dashboard = () => {
 	const { user } = useAuth();
-	const isAdmin = true;
+	const [isAdmin] = useAdmin();
+	// console.log(isAdmin);
 	const isInstructor = false;
 	return (
 		<div className='grid grid-cols-12'>
-			<div className='h-screen col-span-3 p-3 space-y-2 w-60 dark:bg-gray-900 bg-slate-900 ml-24 text-white dark:text-gray-100'>
+			<div className='h-screen col-span-4 p-3 space-y-2 w-60 dark:bg-gray-900 bg-slate-900 ml-24 text-white dark:text-gray-100'>
 				<div className='flex items-center p-2 space-x-4'>
 					<img
 						src={user ? user?.photoURL : ''}
@@ -90,7 +92,7 @@ const Dashboard = () => {
 					</ul>
 				</div>
 			</div>
-			<div className='col-span-9 flex items-center justify-center'>
+			<div className='col-span-8 flex items-center justify-center'>
 				<Outlet />
 			</div>
 		</div>

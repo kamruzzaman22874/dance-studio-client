@@ -1,7 +1,7 @@
 const PopularClass = ({ item }) => {
 	const { image, classesName, instructorName, availableSeats, price } = item;
 	return (
-		<div className='rounded-md shadow-md sm:w-96 dark:bg-gray-900 dark:text-gray-100 my-24 mx-24 '>
+		<div className='rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100 mt-24'>
 			<img
 				src={image}
 				alt=''
@@ -18,7 +18,7 @@ const PopularClass = ({ item }) => {
 				</div>
 				<span className='mt-2'>
 					<input
-						className='border-b-2 hover:border-b-[#090580] hover:bg-orange-400 text-white bg-[#090580] px-4 py-2 rounded'
+						className='border-b-2 bg-[#2B2A4C] hover:border-b-[#090580] hover:bg-orange-400 text-white cursor-pointer px-4 py-2 rounded'
 						type='submit'
 						value='submit'
 					/>
