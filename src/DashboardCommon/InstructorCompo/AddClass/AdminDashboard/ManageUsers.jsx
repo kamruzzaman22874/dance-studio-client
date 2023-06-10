@@ -46,7 +46,11 @@ const ManageUsers = () => {
 
 	return (
 		<div className='overflow-x-auto w-full'>
-			<h2> Total Users : {users.length}</h2>
+			<h2 className='text-lg font-mono'>
+				{' '}
+				<span className='border-b-4 border-b-[#090580]'>Total</span> Users :{' '}
+				{users.length}
+			</h2>
 			<table className='table table-zebra'>
 				{/* head */}
 				<thead>
@@ -54,7 +58,8 @@ const ManageUsers = () => {
 						<th>#</th>
 						<th>Name</th>
 						<th>User Email</th>
-						<th className='text-center'>Action</th>
+						<th>Make Admin</th>
+						<th>Make Instructor</th>
 					</tr>
 				</thead>
 				<tbody>

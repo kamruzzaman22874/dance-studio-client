@@ -26,7 +26,8 @@ const ManageClasses = () => {
 	});
 
 	const handleApproveStatus = (item) => {
-		axiosSecure.patch(`/classes/approve/${item._id}`).then((data) => {
+		axiosSecure.patch(`/classes/approve/${item._id}`)
+			.then((data) => {
 			console.log(data);
 		});
 	};
