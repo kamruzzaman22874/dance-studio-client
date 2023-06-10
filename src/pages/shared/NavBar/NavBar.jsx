@@ -1,5 +1,4 @@
 import ActiveLink from '../../../components/ActiveLink';
-import logo from '../../../assets/images/logo.png';
 import useAuth from '../../../hook/useAuth';
 
 const NavBar = () => {
@@ -10,7 +9,7 @@ const NavBar = () => {
 			.catch((err) => console.log(err));
 	};
 	const navItem = (
-		<div className='md:flex gap-10 items-center'>
+		<div className='md:flex gap-10 items-center font-mono'>
 			<li className='bg-none'>
 				<ActiveLink to='/'>Home</ActiveLink>
 			</li>
@@ -18,7 +17,7 @@ const NavBar = () => {
 				<ActiveLink to='/instructor'>Instructors</ActiveLink>
 			</li>
 			<li>
-				<ActiveLink className='' to='/classes'>
+				<ActiveLink className='' to='/dashboard/manageclasses'>
 					Classes
 				</ActiveLink>
 			</li>

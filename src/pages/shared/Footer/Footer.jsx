@@ -6,10 +6,13 @@ import {
 } from 'react-icons/fa';
 const Footer = () => {
 	return (
-		<footer className='p-6 dark:bg-gray-800 bg-[#571f9c] mt-12 dark:text-gray-100 text-lg text-white'>
+		<footer className='p-6 dark:bg-gray-800 bg-[#571f9c] mt-12 dark:text-gray-100 text-lg text-white font-mono'>
 			<div className='container grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4'>
 				<div className='flex flex-col space-y-4'>
-					<h2 className='font-medium'>DANCE STUDIO</h2>
+					<h2 className='font-medium'>
+						<span className='border-b-4 border-b-[#ec008c] text-xl'>DANCE</span>{' '}
+						STUDIO
+					</h2>
 					<div className='flex flex-col space-y-10 text-sm dark:text-gray-400'>
 						<p className='py-6'>
 							Dance is a wordpress theme that is truly multi-purpose with our
@@ -90,9 +93,8 @@ const Footer = () => {
 				</div>
 				<div className='flex flex-col space-y-4 text-lg'>
 					<h2 className='font-medium'>
-						<span>Opening</span> Hours
+						<span className='border-b-4 border-b-[#ec008c]'>Opening</span> Hours
 					</h2>
-					<hr className='w-10 border-b-4 border-b-[#ec008c]' />
 					<div className='flex flex-col space-y-2 text-sm dark:text-gray-400'>
 						<a
 							className='flex items-center gap-3'
@@ -167,10 +169,11 @@ const Footer = () => {
 						</a>
 					</div>
 				</div>
-				<div className='flex flex-col space-y-4'>
-					<h2 className='font-medium'>Contact Us</h2>
-					<hr className='w-10 border-b-4 border-b-[#ec008c]' />
-					<div className='flex flex-col space-y-2 text-sm dark:text-gray-400'>
+				<div className='flex flex-col space-y-4 '>
+					<h2 className='font-medium '>
+						<span className='border-b-4 border-b-[#ec008c]'>Contact</span> Us
+					</h2>
+					<div className='flex flex-col space-y-2 text-sm dark:text-gray-400 my-10'>
 						<a
 							className='flex items-center gap-3'
 							rel='noopener noreferrer'
@@ -179,14 +182,14 @@ const Footer = () => {
 							<p>Alawol Avenue, Uttara, Dhaka-1230</p>
 						</a>
 						<a
-							className='flex items-center gap-3 py-4'
+							className='flex items-center gap-3'
 							rel='noopener noreferrer'
 							href='#'>
 							<FaPhoneAlt className='text-xl' />
 							<p>+8801989214721</p>
 						</a>
 						<a
-							className='flex items-center gap-3 py-4'
+							className='flex items-center gap-3'
 							rel='noopener noreferrer'
 							href='#'>
 							<FaMailBulk className='text-xl' />

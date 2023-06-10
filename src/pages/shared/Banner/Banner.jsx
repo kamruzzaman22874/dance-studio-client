@@ -24,21 +24,33 @@ const Banner = () => {
 					modules={[Autoplay, Pagination, Navigation]}
 					className='mySwiper'>
 					<SwiperSlide>
-						<img className='h-screen w-full' src={slide1} alt='' />
+						<img
+							className='h-screen w-full bg-slate-900 bg-opacity-70 bg-blend-overlay'
+							src={slide1}
+							alt=''
+						/>
 						<div className='absolute top-1/2 right-60 text-white text-6xl  bg-transparent text-center'>
 							<p className='uppercase'>We'll teach you to</p>
 							<h2 className='text-6xl uppercase'>Dance</h2>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
-						<img className='h-screen w-full' src={slide3} alt='' />
+						<img
+							className='h-screen w-full bg-slate-900 bg-opacity-70 bg-blend-overlay'
+							src={slide3}
+							alt=''
+						/>
 						<div className='absolute top-1/2 right-60 text-white text-6xl  bg-transparent text-center'>
 							<p className='uppercase'>We'll teach you to</p>
 							<h2 className='text-6xl uppercase'>Dance</h2>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide>
-						<img className='h-screen w-full ' src={slide4} alt='' />
+						<img
+							className='h-screen w-full bg-slate-900 bg-opacity-70 bg-blend-overlay'
+							src={slide4}
+							alt=''
+						/>
 						<div className='absolute top-1/2 right-60 text-white text-6xl bg-transparent text-center'>
 							<p className='uppercase'>We'll teach you to</p>
 							<h2 className='text-6xl uppercase'>Dance</h2>

@@ -4,7 +4,7 @@ import team3 from '../../assets/images/team3.jpg';
 
 const ExtraSection = () => {
 	return (
-		<section className='py-10 bg-white sm:py-16 lg:py-24 w-full'>
+		<section className='py-10 bg-white sm:py-16 lg:py-24 w-full font-mono'>
 			<div className='px-4 w-full  lg:px-8  bg-yellow-400 p-4'>
 				<div className='max-w-2xl mx-auto text-center'>
 					<h2 className='text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl'>

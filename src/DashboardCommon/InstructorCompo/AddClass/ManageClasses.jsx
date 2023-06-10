@@ -1,4 +1,5 @@
-import { useQuery } from 'react-query';
+
+import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
 
@@ -30,7 +31,7 @@ const ManageClasses = () => {
 		});
 	};
 	const handleDenyStatus = (item) => {
-		axiosSecure.patch(`/classes/approve/${item._id}`).then((data) => {
+		axiosSecure.patch(`/classes/deny/${item._id}`).then((data) => {
 			console.log(data);
 		});
 	};
@@ -78,7 +79,7 @@ const ManageClasses = () => {
 									<td>{item.price}</td>
 									<td className='flex items-center mt-3 gap-2'>
 										<button className='btn btn-xs'>
-											{item.status ? item.status : 'pending'}
+											{item.status == 'approved' ? 'approved' : item.status == 'denied' ? 'denied' : 'pending'}
 										</button>
 									</td>
 									<th>
@@ -94,19 +95,6 @@ const ManageClasses = () => {
 											disabled={item?.status}>
 											Deny
 										</button>
-										<dialog id='my_modal_3' className='modal'>
-											<form method='dialog' className='modal-box'>
-												<button
-													htmlFor='my-modal-3'
-													className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>
-													✕
-												</button>
-												<h3 className='font-bold text-lg'>Hello!</h3>
-												<p className='py-4'>
-													Press ESC key or click on ✕ button to close
-												</p>
-											</form>
-										</dialog>
 									</th>
 								</tr>
 							</>

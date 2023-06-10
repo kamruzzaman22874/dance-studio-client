@@ -15,10 +15,9 @@ const AddClass = () => {
 			body: formData,
 		})
 			.then((res) => res.json())
-            .then((imgResponse) => {
-                console.log(imgResponse);
-                if (imgResponse.success) {
-
+			.then((imgResponse) => {
+				console.log(imgResponse);
+				if (imgResponse.success) {
 					const imgUrl = imgResponse.data.url;
 					// const { classesName, instructorName, availableSeats, price } = data;
 					const newItem = {
@@ -28,10 +27,9 @@ const AddClass = () => {
 						availableSeats: data.availableSeats,
 						price: parseFloat(data.price),
 						image: imgUrl,
-                    };
-                   
-                    axiosSecure.post('/classes', newItem)
-                        .then((data) => {
+					};
+
+					axiosSecure.post('/classes', newItem).then((data) => {
 						if (data.data.insertedId) {
 							Swal.fire({
 								position: 'top-end',
@@ -42,12 +40,15 @@ const AddClass = () => {
 							});
 						}
 					});
-                }
+				}
 			});
-            console.log(data);
+		console.log(data);
 	};
 	return (
 		<section className='p-6 dark:bg-gray-800 dark:text-gray-50 rounded'>
+			<h2 className='mb-6 text-2xl font-mono'>
+				<span className='border-b-4 border-b-[#090580]'>Add</span> Classes
+			</h2>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className='container flex flex-col mx-auto ng-untouched ng-pristine ng-valid bg-[#116A7B] rounded'>
@@ -104,7 +105,7 @@ const AddClass = () => {
 							/>
 						</div>
 						<input
-							className='px-4 py-2 hover:bg-[#ECE5C7] cursor-pointer text-white hover:text-black rounded border-b-4 hover:border-b-orange-500 font-semibold bg-[#090580]'
+							className='px-4 py-2 hover:bg-[#ECE5C7] cursor-pointer text-white hover:text-black rounded border-b-4 hover:border-b-[#090580] font-semibold bg-[#090580]'
 							type='submit'
 							value='Submit'
 						/>
