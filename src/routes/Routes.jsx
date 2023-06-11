@@ -4,9 +4,11 @@ import ManageUsers from '../DashboardCommon/InstructorCompo/AddClass/AdminDashbo
 import ManageClasses from '../DashboardCommon/InstructorCompo/AddClass/ManageClasses';
 import Dashboard from '../layout/Dashboard';
 import Main from '../layout/Main';
+import ClassesPage from '../pages/ClassesPage/ClassesPage';
 import Login from '../pages/Login/Login';
 import Home from '../pages/shared/Home/Home/Home';
 import SignUp from '../pages/SignUp/SignUp';
+import PrivateRoute from './PrivateRoute';
 
 export const router = createBrowserRouter([
 	{
@@ -30,7 +32,11 @@ export const router = createBrowserRouter([
 	},
 	{
 		path: 'dashboard',
-		element: <Dashboard />,
+		element: (
+			<PrivateRoute>
+				<Dashboard />
+			</PrivateRoute>
+		),
 		children: [
 			{
 				path: '/dashboard/instructor-addclass',
@@ -41,11 +47,13 @@ export const router = createBrowserRouter([
 				element: <ManageClasses />,
 			},
 			{
+				path:'/myclasses',
+				element: <ClassesPage/>,
+			},
+			{
 				path: '/dashboard/manageusers',
 				element: <ManageUsers />,
 			},
-			
-
 		],
 	},
 ]);

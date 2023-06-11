@@ -1,4 +1,3 @@
-
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
@@ -26,8 +25,7 @@ const ManageClasses = () => {
 	});
 
 	const handleApproveStatus = (item) => {
-		axiosSecure.patch(`/classes/approve/${item._id}`)
-			.then((data) => {
+		axiosSecure.patch(`/classes/approve/${item._id}`).then((data) => {
 			console.log(data);
 		});
 	};
@@ -38,7 +36,10 @@ const ManageClasses = () => {
 	};
 
 	return (
-		<div>
+		<div className='py-24 '>
+			<h2 className='font-mono text-xl'>
+				<span className='border-b-4 border-b-[#090580]'>Manage</span> Classes
+			</h2>
 			<div className=' shadow-lg py-6 rounded gap-3'>
 				<table className='table'>
 					{/* head */}
@@ -80,7 +81,11 @@ const ManageClasses = () => {
 									<td>{item.price}</td>
 									<td className='flex items-center mt-3 gap-2'>
 										<button className='btn btn-xs'>
-											{item.status == 'approved' ? 'approved' : item.status == 'denied' ? 'denied' : 'pending'}
+											{item.status == 'approved'
+												? 'approved'
+												: item.status == 'denied'
+												? 'denied'
+												: 'pending'}
 										</button>
 									</td>
 									<th>

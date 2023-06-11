@@ -17,7 +17,7 @@ const NavBar = () => {
 				<ActiveLink to='/instructor'>Instructors</ActiveLink>
 			</li>
 			<li>
-				<ActiveLink className='' to='/dashboard/manageclasses'>
+				<ActiveLink className='' to='/myclasses'>
 					Classes
 				</ActiveLink>
 			</li>
