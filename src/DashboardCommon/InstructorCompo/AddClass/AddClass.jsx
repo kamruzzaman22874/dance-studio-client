@@ -76,6 +76,7 @@ const AddClass = () => {
 							<label className='text-md text-white'>Instructor Name</label>
 							<input
 								defaultValue={user?.displayName}
+								readOnly
 								placeholder='instructor name'
 								{...register('instructorName')}
 								className='w-full p-2 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900'
@@ -85,6 +86,7 @@ const AddClass = () => {
 							<label className='text-md text-white'>Instructor Email</label>
 							<input
 								defaultValue={user?.email}
+								readOnly
 								{...register('instructorEmail')}
 								placeholder='Instructor Email'
 								className='w-full p-2 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900'

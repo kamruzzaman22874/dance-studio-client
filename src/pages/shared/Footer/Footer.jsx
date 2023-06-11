@@ -6,7 +6,7 @@ import {
 } from 'react-icons/fa';
 const Footer = () => {
 	return (
-		<footer className='p-6 dark:bg-gray-800 bg-[#571f9c] my-24 dark:text-gray-100 text-lg text-white font-mono'>
+		<footer className='p-6 dark:bg-gray-800 bg-[#571f9c] dark:text-gray-100 text-lg text-white font-mono'>
 			<div className='container grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4'>
 				<div className='flex flex-col space-y-4'>
 					<h2 className='font-medium'>

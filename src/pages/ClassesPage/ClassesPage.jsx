@@ -4,11 +4,11 @@ import ClassPage from "./ClassPage";
 const ClassesPage = () => {
     const [classes, setClasses] = useState([]);
 	useEffect(() => {
-	fetch('http://localhost:7000/classes')
-			.then((res) => res.json())
-			.then((data) => {
-				setClasses(data);
-			});
+	fetch(`http://localhost:7000/instructorStatus/approved`)
+    .then((res) => res.json())
+    .then((data) => {
+      setClasses(data);
+    });
 	}, []);
     return (
         <div className='grid md:grid-cols-3 gap-6 px-12'>
