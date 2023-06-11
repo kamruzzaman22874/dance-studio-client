@@ -20,7 +20,7 @@ const ClassPage = ({item}) => {
 					<input
 						className='border-b-2 bg-[#2B2A4C] hover:border-b-[#090580] hover:bg-orange-400 text-white cursor-pointer px-4 py-2 rounded'
 						type='submit'
-						value='submit'
+						value='Select'
 					/>
 				</span>
 			</div>

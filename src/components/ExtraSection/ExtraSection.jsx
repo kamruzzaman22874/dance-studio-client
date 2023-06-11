@@ -4,13 +4,13 @@ import team3 from '../../assets/images/team3.jpg';
 
 const ExtraSection = () => {
 	return (
-		<section className='py-10 bg-white sm:py-16 lg:py-24 w-full font-mono'>
-			<div className='px-4 w-full  lg:px-8  bg-yellow-400 p-4'>
+		<section className='py-10 text-white sm:py-16 lg:py-24 w-full font-mono'>
+			<div className='px-4 w-full lg:px-8  bg-[#4441af] p-4'>
 				<div className='max-w-2xl mx-auto text-center'>
-					<h2 className='text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl'>
+					<h2 className='text-3xl font-bold leading-tight  sm:text-4xl lg:text-5xl'>
 						We make you want to dance...right now!
 					</h2>
-					<p className='max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600'>
+					<p className='max-w-xl mx-auto mt-4 text-base leading-relaxed'>
 						THE RENOWNED DANCERS OF DIFFERENT GENRES
 					</p>
 				</div>
@@ -28,11 +28,11 @@ const ExtraSection = () => {
 							<h1>Bobbie Jackson</h1>
 						</span>
 						<p className='mt-6 text-xl font-semibold'>
-							<a href='#' title='' className='text-black'>
+							<a href='#' title='' className=''>
 								<p>SALSA MUSIC</p>
 							</a>
 						</p>
-						<p className='mt-4 text-gray-600'>
+						<p className='mt-4'>
 							Mirum est notare quam littera gothica, quam putamus.
 						</p>
 						<div className='h-0 mt-6 mb-4 border-t-2 border-gray-200 border-dashed'></div>
@@ -50,11 +50,11 @@ const ExtraSection = () => {
 							<h2>Sylvester Gonzales</h2>
 						</span>
 						<p className='mt-6 text-xl font-semibold'>
-							<a href='#' title='' className='text-black'>
+							<a href='#' title='' className=''>
 								<p>HIP HOP SPECIALIST</p>
 							</a>
 						</p>
-						<p className='mt-4 text-gray-600'>
+						<p className='mt-4'>
 							Mirum est notare quam littera gothica, quam putamus.
 						</p>
 						<div className='h-0 mt-6 mb-4 border-t-2 border-gray-200 border-dashed'></div>
@@ -72,11 +72,11 @@ const ExtraSection = () => {
 							<h2>Inez Hernandez</h2>
 						</span>
 						<p className='mt-6 text-xl font-semibold'>
-							<a href='#' title='' className='text-black'>
+							<a href='#' title='' className=''>
 								SALSA DANCE
 							</a>
 						</p>
-						<p className='mt-4 text-gray-600'>
+						<p className='mt-4'>
 							Mirum est notare quam littera gothica, quam putamus.
 						</p>
 						<div className='h-0 mt-6 mb-4 border-t-2 border-gray-200 border-dashed'></div>

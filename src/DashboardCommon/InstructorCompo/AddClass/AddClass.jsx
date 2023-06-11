@@ -1,12 +1,15 @@
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
+import useAuth from '../../../hook/useAuth';
 const img_hosting_token = import.meta.env.VITE_image_upload_token;
 console.log(img_hosting_token);
 const AddClass = () => {
+	const {user} = useAuth()
 	const [axiosSecure] = useAxiosSecure();
 	const { register, handleSubmit } = useForm();
 	const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
+	console.log(img_hosting_url);
 	const onSubmit = (data) => {
 		const formData = new FormData();
 		formData.append('image', data.image[0]);
@@ -42,7 +45,6 @@ const AddClass = () => {
 					});
 				}
 			});
-		console.log(data);
 	};
 	return (
 		<section className='p-6 dark:bg-gray-800 dark:text-gray-50 rounded'>
@@ -73,6 +75,7 @@ const AddClass = () => {
 						<div className='col-span-full sm:col-span-3'>
 							<label className='text-md text-white'>Instructor Name</label>
 							<input
+								defaultValue={user?.displayName}
 								placeholder='instructor name'
 								{...register('instructorName')}
 								className='w-full p-2 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900'
@@ -81,6 +84,7 @@ const AddClass = () => {
 						<div className='col-span-full sm:col-span-3'>
 							<label className='text-md text-white'>Instructor Email</label>
 							<input
+								defaultValue={user?.email}
 								{...register('instructorEmail')}
 								placeholder='Instructor Email'
 								className='w-full p-2 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900'

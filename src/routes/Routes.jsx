@@ -9,11 +9,16 @@ import Login from '../pages/Login/Login';
 import Home from '../pages/shared/Home/Home/Home';
 import SignUp from '../pages/SignUp/SignUp';
 import PrivateRoute from './PrivateRoute';
+import InstructorNav from '../pages/InstructorNav/InstructorNav';
+import UserNavbar from '../pages/UserNavbar/UserNavbar';
+import MyClasses from '../pages/MyClasses/MyClasses';
+import ErrorPage from '../components/ErrorPage/ErrorPage';
 
 export const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <Main />,
+		errorElement: <ErrorPage></ErrorPage>,
 		children: [
 			{
 				path: '/',
@@ -28,6 +33,14 @@ export const router = createBrowserRouter([
 				path: '/login',
 				element: <Login />,
 			},
+			{
+				path:'/myclasses',
+				element: <ClassesPage/>,
+			},
+			{
+				path: '/instructor',
+				
+			}
 		],
 	},
 	{
@@ -46,14 +59,23 @@ export const router = createBrowserRouter([
 				path: '/dashboard/manageclasses',
 				element: <ManageClasses />,
 			},
-			{
-				path:'/myclasses',
-				element: <ClassesPage/>,
-			},
+			
 			{
 				path: '/dashboard/manageusers',
 				element: <ManageUsers />,
 			},
+			{
+				path: '/dashboard/myclass',
+				element: <MyClasses/>
+			}
+			,
+			{
+				path: 'users',
+				element: <UserNavbar/>
+			},
+
 		],
 	},
+
+
 ]);

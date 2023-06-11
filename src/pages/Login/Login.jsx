@@ -45,6 +45,7 @@ const Login = () => {
 	const handleGoogleSignIn = () => {
 		googleSignIn()
 			.then((result) => {
+				console.log(result);
 				Swal.fire({
 					position: 'top-end',
 					icon: 'success',
@@ -101,6 +102,7 @@ const Login = () => {
 								</label>
 								<input
 									type='text'
+									placeholder='email'
 									className='w-full mb-2 px-3 py-2 border rounded shadow-sm focus:outline-none focus:border-indigo-500 border-b-4 border-b-orange-500'
 									{...register('email', {
 										required: 'Email is required',
@@ -119,6 +121,7 @@ const Login = () => {
 									Password
 								</label>
 								<input
+									placeholder='password'
 									className='w-full mb-2 px-3 py-2 border rounded shadow-sm focus:outline-none focus:border-indigo-500 border-b-4 border-b-orange-500'
 									type={show ? 'text' : 'password'}
 									{...register('password', {

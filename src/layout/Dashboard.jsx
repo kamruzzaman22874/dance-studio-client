@@ -28,7 +28,7 @@ const Dashboard = () => {
 								rel='noopener noreferrer'
 								href='#'
 								className='text-xs hover:underline dark:text-gray-400'>
-								View profile
+								{user?.email}
 							</a>
 						</span>
 					</div>
