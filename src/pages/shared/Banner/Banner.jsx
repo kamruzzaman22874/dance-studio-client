@@ -31,12 +31,12 @@ const Banner = () => {
               src={slide1}
               alt=""
             />
-            <div className="absolute top-48 left-96 text-white md:text-6xl  bg-transparent text-center font-semibold">
+            <div className="absolute md:mt-0 -mt-72 left-28 md:top-48 md:left-96 text-white md:text-6xl  bg-transparent text-center font-semibold">
               <Fade direction="left">
                 <p className="uppercase">We'll teach you to</p>
               </Fade>
               <Fade direction="right">
-                <h2 className="text-6xl uppercase">Dance</h2>
+                <h2 className="md:text-6xl uppercase">Dance</h2>
               </Fade>
             </div>
           </SwiperSlide>
@@ -46,12 +46,12 @@ const Banner = () => {
               src={slide3}
               alt=""
             />
-            <div className="absolute top-48 left-96 text-white md:text-6xl  bg-transparent text-center font-semibold">
+            <div className="absolute md:mt-0 -mt-72  left-28 md:top-48 md:left-96 text-white md:text-6xl  bg-transparent text-center font-semibold">
               <Fade direction="left">
                 <p className="uppercase">We'll teach you to</p>
               </Fade>
               <Fade direction="right">
-                <h2 className="text-6xl uppercase">Dance</h2>
+                <h2 className="md:text-6xl uppercase">Dance</h2>
               </Fade>
             </div>
           </SwiperSlide>
@@ -61,12 +61,12 @@ const Banner = () => {
               src={slide4}
               alt=""
             />
-            <div className="absolute top-48 left-96 text-white md:text-6xl bg-transparent text-center font-semibold">
+            <div className="absolute md:mt-0 -mt-72 left-28 md:top-48 md:left-96 text-white md:text-6xl bg-transparent text-center font-semibold">
               <Fade direction="left">
                 <p className="uppercase text-blur">We'll teach you to</p>
               </Fade>
               <Fade direction="right">
-                <h2 className="text-6xl uppercase">Dance</h2>
+                <h2 className="md:text-6xl uppercase">Dance</h2>
               </Fade>
             </div>
           </SwiperSlide>
