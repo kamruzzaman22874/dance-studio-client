@@ -9,47 +9,47 @@ const NavBar = () => {
 			.catch((err) => console.log(err));
 	};
 	const navItem = (
-		<div className='md:flex gap-10 items-center font-mono'>
-			<li className='bg-none'>
-				<ActiveLink to='/'>Home</ActiveLink>
-			</li>
-			<li>
-				<ActiveLink to='/instructor'>Instructors</ActiveLink>
-			</li>
-			<li>
-				<ActiveLink className='' to='/myclasses'>
-					Classes
-				</ActiveLink>
-			</li>
-			{user ? (
-				<>
-					<li>
-						<ActiveLink className='' to='/dashboard'>
-							Dashboard
-						</ActiveLink>
-					</li>
-					<div
-						className='avatar ml-3 tooltip flex items-center mgap-5 tooltip-bottom tooltip-secondary'
-						data-tip={user.displayName}>
-						<div className='w-10 rounded-full cursor-pointer ring ring-primary ring-offset-base-100 ring-offset-2'>
-							<img src={user.photoURL} />
-						</div>
-					</div>
-					<ActiveLink>
-						<button onClick={handleLogOut} className=''>
-							Logout
-						</button>
-					</ActiveLink>
-				</>
-			) : (
-				<li>
-					<ActiveLink className='' to='/login'>
-						Login
-					</ActiveLink>
-				</li>
-			)}
-		</div>
-	);
+    <div className="md:flex gap-10 items-center font-mono">
+      <li className="bg-none">
+        <ActiveLink to="/">Home</ActiveLink>
+      </li>
+      <li>
+        <ActiveLink to="/instructor">Instructors</ActiveLink>
+      </li>
+      <li>
+        <ActiveLink className="" to="/myclasses">
+          Classes
+        </ActiveLink>
+      </li>
+      {user ? (
+        <>
+          <li>
+            <ActiveLink className="" to="/dashboard">
+              Dashboard
+            </ActiveLink>
+          </li>
+          <div
+            className="avatar ml-3 tooltip flex items-center mgap-5 tooltip-bottom tooltip-secondary"
+            data-tip={user.displayName}>
+            <div className="w-10 rounded-full cursor-pointer ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src={user.photoURL} />
+            </div>
+          </div>
+          <ActiveLink>
+            <button onClick={handleLogOut} className="">
+              Logout
+            </button>
+          </ActiveLink>
+        </>
+      ) : (
+        <li>
+          <ActiveLink className="" to="/login">
+            Login
+          </ActiveLink>
+        </li>
+      )}
+    </div>
+  );
 
 	return (
 		<div className='navbar fixed z-10 bg-opacity-100 px-3 bg-[#2B2A4C] justify-center md:text-white '>

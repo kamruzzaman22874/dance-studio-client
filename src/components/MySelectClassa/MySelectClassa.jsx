@@ -31,7 +31,7 @@ const MySelectClassa = () => {
               <th>Delete</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="">
             {mySelectedClass.map((user, idx) =>  <SelectedTable key={idx} refetch={refetch} user={user}></SelectedTable>)}
           </tbody>
         </table>

@@ -33,26 +33,26 @@ const SelectedTable = ({ user, refetch }) => {
     <div>
       {
         <tr className="bg-base-200">
-          <td>{user?.image}}</td>
-          <th>{user?.classesName}</th>
-          <th>{user?.instructorName}</th>
-          <th>{user?.instructorEmail}</th>
-          <th>{user?.availabeSeats}</th>
+          <td>{user?.image}</td>
+          <td>{user?.classesName}</td>
+          <td>{user?.instructorName}</td>
+          <td>{user?.instructorEmail}</td>
+          <td>{user?.availabeSeats}</td>
           <td>{user?.price}</td>
           <td>
             <Link
               to={`/dashboard/payment/${user._id}`}
               state={{ enrolledClass: user }}>
               <button className=" bg-amber-500 p-2 rounded">
-                <MdPayment className="w-6 h-6"></MdPayment>
+                {/* <MdPayment className="w-6 h-6"></MdPayment> */}
               </button>
             </Link>
           </td>
           <td>
             <button
-              onClick={() => deleteClass(user._id)}
+              onClick={() => handleDelete(user._id)}
               className=" bg-rose-600 p-2 rounded">
-              <HiTrash className="w-6 h-6"></HiTrash>
+              {/* <HiTrash className="w-6 h-6"></HiTrash> */}
             </button>
           </td>
         </tr>

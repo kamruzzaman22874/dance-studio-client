@@ -13,69 +13,72 @@ import InstructorNav from '../pages/InstructorNav/InstructorNav';
 import UserNavbar from '../pages/UserNavbar/UserNavbar';
 import MyClasses from '../pages/MyClasses/MyClasses';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
+import MySelectClassa from '../components/MySelectClassa/MySelectClassa';
+import InstructorPage from '../components/InstructorPage/InstructorPage';
 
 export const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <Main />,
-		errorElement: <ErrorPage></ErrorPage>,
-		children: [
-			{
-				path: '/',
-				element: <Home />,
-			},
+  {
+    path: "/",
+    element: <Main />,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
 
-			{
-				path: '/signup',
-				element: <SignUp />,
-			},
-			{
-				path: '/login',
-				element: <Login />,
-			},
-			{
-				path:'/myclasses',
-				element: <ClassesPage/>,
-			},
-			{
-				path: '/instructor',
-				
-			}
-		],
-	},
-	{
-		path: 'dashboard',
-		element: (
-			<PrivateRoute>
-				<Dashboard />
-			</PrivateRoute>
-		),
-		children: [
-			{
-				path: '/dashboard/instructor-addclass',
-				element: <AddClass />,
-			},
-			{
-				path: '/dashboard/manageclasses',
-				element: <ManageClasses />,
-			},
-			
-			{
-				path: '/dashboard/manageusers',
-				element: <ManageUsers />,
-			},
-			{
-				path: '/dashboard/myclass',
-				element: <MyClasses/>
-			}
-			,
-			{
-				path: 'users',
-				element: <UserNavbar/>
-			},
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/myclasses",
+        element: <ClassesPage />,
+      },
+      {
+        path: "/instructor",
+		element: <InstructorPage/>
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "/dashboard/instructor-addclass",
+        element: <AddClass />,
+      },
+      {
+        path: "/dashboard/manageclasses",
+        element: <ManageClasses />,
+      },
 
-		],
-	},
+      {
+        path: "/dashboard/manageusers",
+        element: <ManageUsers />,
+      },
+      {
+        path: "/dashboard/myclass",
+        element: <MyClasses />,
+      },
+    //   {
+    //     path: "/instructor",
+    //     element: <InstructorPage/>
+    //   },
 
-
+      {
+        path: "users",
+        element: <UserNavbar />,
+      },
+    ],
+  },
 ]);
