@@ -27,8 +27,9 @@ const AddClass = () => {
 						classesName: data.classesName,
 						instructorName: data.instructorName,
 						instructorEmail: data.instructorEmail,
-						availableSeats: data.availableSeats,
+						availableSeats: parseInt(data.availableSeats),
 						price: parseFloat(data.price),
+						enrolledStudent: parseInt(0),
 						image: imgUrl,
 					};
 

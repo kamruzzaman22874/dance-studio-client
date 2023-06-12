@@ -1,7 +1,26 @@
+import { useEffect, useState } from 'react';
 import ActiveLink from '../../../components/ActiveLink';
 import useAuth from '../../../hook/useAuth';
+import {LuSunMoon} from 'react-icons/lu'
+
 
 const NavBar = () => {
+const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
+        useEffect(()=>{
+            localStorage.setItem('theme', theme);
+            const localTheme = localStorage.getItem('theme');
+            document.querySelector('html').setAttribute("data-theme" , localTheme)
+        },[theme]);
+
+		const handleDarkMode =(event)=>{
+            if(event.target){
+                setTheme('dark')
+            }
+            else{
+                setTheme('light')
+            }
+        };
+
 	const { user, logOut } = useAuth();
 	const handleLogOut = () => {
 		logOut()
@@ -10,6 +29,7 @@ const NavBar = () => {
 	};
 	const navItem = (
     <div className="md:flex gap-10 items-center font-mono">
+      <LuSunMoon onClick={handleDarkMode} className='text-xl w-2/3 h-10 cursor-pointer'/>
       <li className="bg-none">
         <ActiveLink to="/">Home</ActiveLink>
       </li>

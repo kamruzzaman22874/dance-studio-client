@@ -29,7 +29,7 @@ const location = useLocation()
 
     return (
         <div className="w-full">
-            <h2 className='text-3xl'>Payment method apply</h2>
+            <h2 className='text-3xl text-orange-500 font-mono shadow-lg text-center p-3'>Payment</h2>
             <Elements stripe={stripePromise}>
 				<Checkout cart={cart} price={amount}></Checkout>
 			</Elements>

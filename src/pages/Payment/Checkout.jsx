@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import useAuth from "../../hook/useAuth";
 import useAxiosSecure from "../../hook/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const Checkout = ({ cart, price }) => {
 	console.log(cart);
@@ -90,8 +91,14 @@ const Checkout = ({ cart, price }) => {
             axiosSecure.post('/payments', payment)
                 .then(res => {
                     console.log(res.data);
-                    if (res.data.result.insertedId) {
-                        // display confirm
+                    if (res.data) {
+                        Swal.fire({
+						position: 'middle',
+						icon: 'success',
+						title: 'Payment successfully done',
+						showConfirmButton: false,
+						timer: 1500
+						})
                     }
                 })
         }
