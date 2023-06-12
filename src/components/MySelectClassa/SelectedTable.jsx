@@ -42,7 +42,7 @@ const SelectedTable = ({ user, refetch }) => {
           <td>{user?.price}</td>
           <td>
             <Link
-              to={`/dashboard/payment`} 
+              to={`/dashboard/payment/${user._id}`} 
               state={{ enrolledClass: user }}>
               <button className=" bg-amber-500 p-2 rounded">
                 Pyment
