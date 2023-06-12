@@ -2,6 +2,7 @@ const PopularClass = ({ item }) => {
 	const { image, classesName, instructorName, availableSeats, price } = item;
 	return (
 		<div className='rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100 mt-24 font-serif'>
+			
 			<img
 				src={image}
 				alt=''
