@@ -15,6 +15,8 @@ import MyClasses from '../pages/MyClasses/MyClasses';
 import ErrorPage from '../components/ErrorPage/ErrorPage';
 import MySelectClassa from '../components/MySelectClassa/MySelectClassa';
 import InstructorPage from '../components/InstructorPage/InstructorPage';
+import SelectedTable from '../components/MySelectClassa/SelectedTable';
+import Payment from '../pages/Payment/Payment';
 
 export const router = createBrowserRouter([
   {
@@ -70,14 +72,14 @@ export const router = createBrowserRouter([
         path: "/dashboard/myclass",
         element: <MyClasses />,
       },
-    //   {
-    //     path: "/instructor",
-    //     element: <InstructorPage/>
-    //   },
+      {
+        path: "/dashboard/myselectedclass",
+        element: <MySelectClassa/>,
+      },
 
       {
-        path: "users",
-        element: <UserNavbar />,
+        path: "/dashboard/payment",
+        element: <Payment></Payment>,
       },
     ],
   },

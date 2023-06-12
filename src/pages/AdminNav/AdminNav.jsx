@@ -3,7 +3,7 @@ import { BiUserCheck, BiAlignJustify } from 'react-icons/bi';
 
 const AdminNav = () => {
 	return (
-		<div>
+		<div className='h-full'>
 			<h2>Admin Home</h2>
 			<li>
 				<a

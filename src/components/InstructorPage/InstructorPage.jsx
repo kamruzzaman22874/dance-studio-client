@@ -10,7 +10,7 @@ const InstructorPage = () => {
             setInstructors(data);
         })
     },[])
-    return <div>{instructors.map(instructor => <InstructorInfo
+    return <div className="grid md:grid-cols-3 gap-6 pt-24 mb-10">{instructors.map(instructor => <InstructorInfo
     
     key={instructor._id}
     instructor={instructor}

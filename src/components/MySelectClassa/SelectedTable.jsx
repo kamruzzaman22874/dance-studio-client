@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const SelectedTable = ({ user, refetch }) => {
+  // console.log(user);
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -30,21 +31,21 @@ const SelectedTable = ({ user, refetch }) => {
     });
   };
   return (
-    <div>
+    <>
       {
         <tr className="bg-base-200">
           <td>{user?.image}</td>
           <td>{user?.classesName}</td>
           <td>{user?.instructorName}</td>
           <td>{user?.instructorEmail}</td>
-          <td>{user?.availabeSeats}</td>
+          <td>{user?.availableSeats}</td>
           <td>{user?.price}</td>
           <td>
             <Link
-              to={`/dashboard/payment/${user._id}`}
+              to={`/dashboard/payment`} 
               state={{ enrolledClass: user }}>
               <button className=" bg-amber-500 p-2 rounded">
-                {/* <MdPayment className="w-6 h-6"></MdPayment> */}
+                Pyment
               </button>
             </Link>
           </td>
@@ -52,12 +53,12 @@ const SelectedTable = ({ user, refetch }) => {
             <button
               onClick={() => handleDelete(user._id)}
               className=" bg-rose-600 p-2 rounded">
-              {/* <HiTrash className="w-6 h-6"></HiTrash> */}
+              Delete
             </button>
           </td>
         </tr>
       }
-    </div>
+    </>
   );
 };
 

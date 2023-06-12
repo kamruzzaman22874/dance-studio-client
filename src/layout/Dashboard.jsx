@@ -14,7 +14,7 @@ const Dashboard = () => {
 	// console.log(isAdmin, isInstructor);
 	return (
 		<div className='grid grid-cols-12'>
-			<div className='h-screen col-span-4 p-3 space-y-2 w-60 dark:bg-gray-900 bg-slate-900 ml-24 text-white dark:text-gray-100'>
+			<div className='h-screen col-span-4 p-3 space-y-2 w-60 dark:bg-gray-900 bg-slate-900 ml-24 text-white dark:text-gray-100 sticky top-0'>
 				<div className='flex items-center p-2 space-x-4'>
 					<img
 						src={user ? user?.photoURL : ''}

@@ -12,8 +12,10 @@ const MySelectClassa = () => {
     isLoading,
   } = useQuery(["mySelectedClass", user?.email], async () => {
     const res = await axiosSecure(`/selectedClass/${user?.email}`);
+    
     return res.data;
   });
+  console.log(mySelectedClass);
   return (
     <>
       <div className="overflow-x-auto">
@@ -27,7 +29,7 @@ const MySelectClassa = () => {
               <th>Instructor Email</th>
               <th>Availble Seats</th>
               <th>Price</th>
-              <th>Pay</th>
+              <th>Payment</th>
               <th>Delete</th>
             </tr>
           </thead>

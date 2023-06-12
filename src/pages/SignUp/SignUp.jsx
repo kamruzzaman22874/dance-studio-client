@@ -16,27 +16,31 @@ const SignUp = () => {
 		createUser(data.email, data.password).then((result) => {
 			const loggedUser = result.user;
 			console.log(loggedUser);
-			updateUserProfile(data.name, data.photoURL).then(() => {
-				const saveUser = { name: data.name, email: data.email };
-				fetch('http://localhost:7000/users', {
-					method: 'POST',
-					headers: { 'content-type': 'application/json' },
-					body: JSON.stringify(saveUser),
-				})
-					.then((res) => res.json())
-					.then((data) => {
-						if (data.insertedId) {
-							Swal.fire({
-								position: 'top-end',
-								icon: 'success',
-								title: 'User created successfully',
-								showConfirmButton: false,
-								timer: 1500,
-							});
-						}
-                        navigate('/');
-					});
-			});
+			updateUserProfile(data.name, data.photo).then(() => {
+        const saveUser = {
+          name: data.name,
+          email: data.email,
+          image: data.photo,
+        };
+        fetch("http://localhost:7000/users", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "User created successfully",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+            navigate("/");
+          });
+      });
 		});
 	};
 
