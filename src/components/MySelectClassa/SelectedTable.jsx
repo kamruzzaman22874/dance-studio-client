@@ -34,7 +34,7 @@ const SelectedTable = ({ user, refetch }) => {
     <>
       {
         <tr className="bg-base-200">
-          <td>{user?.image}</td>
+          <td><img className="w-20" src={user?.image} alt="" /></td>
           <td>{user?.classesName}</td>
           <td>{user?.instructorName}</td>
           <td>{user?.instructorEmail}</td>

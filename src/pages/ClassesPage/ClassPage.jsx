@@ -6,13 +6,15 @@ const ClassPage = ({ item }) => {
   const { user } = useAuth();
   const { image, classesName, instructorName, availableSeats, price } = item;
   const handleSelect = (item) => {
-    const { _id, classesName, instructorName, availableSeats, price } = item;
+    const { _id, classesName, instructorName, availableSeats, price ,instructorEmail} = item;
     const newData = {
       selectedId: _id,
       classesName,
       instructorName,
+      instructorEmail,
       availableSeats,
       price,
+      image,
       userEmail: user?.email,
     };
     axios

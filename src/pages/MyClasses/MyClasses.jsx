@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hook/useAuth";
+import { FaEdit } from "react-icons/fa";
 const MyClasses = () => {
   const { user } = useAuth();
   console.log(user);
@@ -48,6 +49,13 @@ const MyClasses = () => {
                 <td className="text-lg text-center">
                   {student?.status || "pending"}
                 </td>
+                <td className="text-xm text-center cursor-pointer">
+                  <FaEdit className="text-xl w-1/2 mx-auto"/>
+                </td>
+                <td className="text-xm ">
+                  {student.feedback}
+                </td>
+                
               </tr>
             </>
           ))}

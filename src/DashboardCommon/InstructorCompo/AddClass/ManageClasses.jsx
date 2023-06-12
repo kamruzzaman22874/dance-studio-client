@@ -36,16 +36,40 @@ const ManageClasses = () => {
       });
     });
   };
-  const handleDenyStatus = (item) => {
-    axiosSecure.patch(`/classes/deny/${item._id}`).then(() => {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "deny success",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    });
+  const handleDenyStatus = async(item) => {
+    const { value: text } = await Swal.fire({
+        input: 'textarea',
+        inputLabel: 'Message',
+        inputPlaceholder: 'Type your message here...',
+        inputAttributes: {
+          'aria-label': 'Type your message here'
+        },
+        showCancelButton: true
+      })
+
+      if (text) {
+        axiosSecure.patch(`/classes/deny/${item._id}`).then((res) => {
+          if(res.data.modifiedCount > 0) {
+            axiosSecure.patch(`/classes/update/${item._id}`,{
+              feedback:text,
+            })
+            .then(result => {
+              if(result.data.modifiedCount>0){
+                Swal.fire({
+                  position: "top-end",
+                  icon: "success",
+                  title: "denied successfully done",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+            })
+
+          }
+        });
+        Swal.fire(text)
+      }
+    
   };
 
   return (
@@ -108,8 +132,10 @@ const ManageClasses = () => {
                       className="btn btn-ghost btn-xs bg-blue-800 text-white">
                       Approve
                     </button>
+                    
                     <button
                       className="btn btn-ghost btn-xs w-full my-2"
+
                       onClick={() => handleDenyStatus(item)}
                       disabled={item?.status}>
                       Deny
@@ -119,7 +145,18 @@ const ManageClasses = () => {
               </>
             ))}
           </tbody>
+
         </table>
+            <dialog id="my_modal_1" className="modal">
+              <form method="dialog" className="modal-box">
+                <h3 className="font-bold text-lg">Hello!</h3>
+                <p className="py-4">Press ESC key or click the button below to close</p>
+                <div className="modal-action">
+                  {/* if there is a button in form, it will close the modal */}
+                  <button className="btn">Close</button>
+                </div>
+              </form>
+            </dialog>
       </div>
     </div>
   );
