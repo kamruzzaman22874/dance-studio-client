@@ -81,7 +81,7 @@ const Login = () => {
 
 	return (
 		<section>
-			<div className='flex flex-col items-center justify-center h-screen font-roboto '>
+			<div className='flex flex-col items-center justify-center h-screen font-roboto pt-20'>
 				<div className='bg-white w-full p-8 rounded shadow flex items-center'>
 					<div className='w-1/2'>
 						<img

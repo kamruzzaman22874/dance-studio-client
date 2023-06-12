@@ -1,9 +1,11 @@
 import axios from "axios";
 import useAuth from "../../hook/useAuth";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const ClassPage = ({ item }) => {
   const { user } = useAuth();
+  const navigate = useNavigate()
   const { image, classesName, instructorName, availableSeats, price } = item;
   const handleSelect = (item) => {
     const { _id, classesName, instructorName, availableSeats, price ,instructorEmail} = item;
@@ -15,10 +17,12 @@ const ClassPage = ({ item }) => {
       availableSeats,
       price,
       image,
-      userEmail: user?.email,
     };
+    if(!user){
+      return navigate("/login")
+    }
     axios
-      .post(`http://localhost:7000/selectedClassData`, newData)
+      .post(`https://dance-studio-server-kamruzzaman22874.vercel.app/selectedClassData`, newData)
       .then((result) => {
         if (result.data.insertedId) {
           Swal.fire({

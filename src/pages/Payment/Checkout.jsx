@@ -27,6 +27,15 @@ const Checkout = ({ cart, price }) => {
     }, [price, axiosSecure])
 
 
+	// useEffect(()=>{
+	// 	fetch(`https://dance-studio-server-kamruzzaman22874.vercel.app/selectedClass/${user?.email}`)
+	// 	.then(res => res.json())
+	// 	.then(data => {
+	// 		console.log(data);
+	// 	})
+	// },[user?.email])
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 

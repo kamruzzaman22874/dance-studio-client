@@ -15,7 +15,7 @@ const location = useLocation()
     console.log(id);
 
     useEffect(()=>{
-        fetch(`http://localhost:7000/selectedClasses/${id?.id}`)
+        fetch(`https://dance-studio-server-kamruzzaman22874.vercel.app/selectedClasses/${id?.id}`)
         .then(res => res.json())
         .then(data => {
             setCart(data);

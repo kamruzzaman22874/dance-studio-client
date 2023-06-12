@@ -4,7 +4,7 @@ import PopularClass from '../PopularClass/PopularClass';
 const PopularClasses = () => {
 	const [classes, setClasses] = useState([]);
 	useEffect(() => {
-		fetch('http://localhost:7000/classes')
+		fetch('https://dance-studio-server-kamruzzaman22874.vercel.app/classes')
 			.then((res) => res.json())
 			.then((data) => {
 				setClasses(data);

@@ -4,7 +4,7 @@ import InstructorInfo from "./InstructorInfo";
 const InstructorPage = () => {
     const [instructors , setInstructors]= useState([])
     useEffect(()=>{
-        fetch("http://localhost:7000/users/instructor")
+        fetch("https://dance-studio-server-kamruzzaman22874.vercel.app/users/instructor")
         .then(res => res.json())
         .then(data =>{
             setInstructors(data);

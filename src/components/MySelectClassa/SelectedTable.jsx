@@ -15,7 +15,7 @@ const SelectedTable = ({ user, refetch }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:7000/deletedClass/${id}`).then((res) => {
+        axios.delete(`https://dance-studio-server-kamruzzaman22874.vercel.app/deletedClass/${id}`).then((res) => {
           refetch();
           if (res.data.deltedCount > 0) {
             Swal.fire({

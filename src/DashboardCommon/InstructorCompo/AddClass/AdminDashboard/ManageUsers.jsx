@@ -3,11 +3,11 @@ import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
 	const { data: users = [], refetch } = useQuery(['users'], async () => {
-		const res = await fetch('http://localhost:7000/users');
+		const res = await fetch('https://dance-studio-server-kamruzzaman22874.vercel.app/users');
 		return res.json();
 	});
 	const handleAdmin = (_id) => {
-		fetch(`http://localhost:7000/users/admin/${_id}`, {
+		fetch(`https://dance-studio-server-kamruzzaman22874.vercel.app/users/admin/${_id}`, {
 			method: 'PATCH',
 		})
 			.then((res) => res.json())
@@ -26,7 +26,7 @@ const ManageUsers = () => {
 	};
 
 	const handleInstructor = (_id) => {
-		fetch(`http://localhost:7000/users/instructor/${_id}`, {
+		fetch(`https://dance-studio-server-kamruzzaman22874.vercel.app/users/instructor/${_id}`, {
 			method: 'PATCH',
 		})
 			.then((res) => res.json())

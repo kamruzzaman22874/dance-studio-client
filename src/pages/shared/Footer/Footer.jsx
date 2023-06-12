@@ -188,13 +188,6 @@ const Footer = () => {
 							<FaPhoneAlt className='text-xl' />
 							<p>+8801989214721</p>
 						</a>
-						<a
-							className='flex items-center gap-3'
-							rel='noopener noreferrer'
-							href='#'>
-							<FaMailBulk className='text-xl' />
-							<p>hossen2022jamal@gmail.com</p>
-						</a>
 					</div>
 				</div>
 			</div>

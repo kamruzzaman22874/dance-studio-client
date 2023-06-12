@@ -2,8 +2,9 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAuth from '../../hook/useAuth';
+import { FcGoogle } from 'react-icons/fc';
 const SignUp = () => {
-	const { createUser, updateUserProfile} = useAuth();
+	const { createUser, updateUserProfile ,googleSignIn} = useAuth();
 	const navigate = useNavigate();
 	const {
 		register,
@@ -22,7 +23,7 @@ const SignUp = () => {
           email: data.email,
           image: data.photo,
         };
-        fetch("http://localhost:7000/users", {
+        fetch("https://dance-studio-server-kamruzzaman22874.vercel.app/users", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(saveUser),
@@ -44,8 +45,24 @@ const SignUp = () => {
 		});
 	};
 
+	const handleGoogleSignIn = () => {
+		googleSignIn()
+			.then((result) => {
+				console.log(result);
+				Swal.fire({
+					position: 'top-end',
+					icon: 'success',
+					title: 'Login successfully done',
+					showConfirmButton: false,
+					timer: 1500,
+				});
+				navigate(from, { replace: true });
+			})
+			.catch((err) => console.log(err));
+	};
+
 	return (
-		<div className='flex justify-center items-center h-screen pt-10'>
+		<div className='flex justify-center items-center py-24'>
 			<form
 				className='bg-white shadow-md rounded px-8 pt-6 pb-8 w-1/3'
 				onSubmit={handleSubmit(onSubmit)}>
@@ -176,17 +193,26 @@ const SignUp = () => {
 				</div>
 				<div className='flex items-center justify-between'>
 					<button
-						className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+						className='w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
 						type='submit'>
 						Register
 					</button>
-					<p>
-						Already have an account ?{' '}
+				</div>
+				<div className='py-6'>
+								<Link onClick={handleGoogleSignIn}>
+									<span className='flex gap-4 justify-center bg-[#2B2A4C] p-3 text-white rounded-md'>
+										<FcGoogle className='text-2xl' />
+										<p>with google sign in</p>
+									</span>
+								</Link>
+							</div>
+							
+					<p className='text-center'>
+						Already have an account ?
 						<Link className='underline' to='/login'>
 							Login
-						</Link>{' '}
+						</Link>
 					</p>
-				</div>
 			</form>
 		</div>
 	);
