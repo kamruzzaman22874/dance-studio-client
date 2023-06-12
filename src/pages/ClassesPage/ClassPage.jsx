@@ -22,7 +22,7 @@ const ClassPage = ({ item }) => {
       return navigate("/login")
     }
     axios
-      .post(`https://dance-studio-server-kamruzzaman22874.vercel.app/selectedClassData`, newData)
+      .post(`https://dance-studio-server.vercel.app/selectedClassData`, newData)
       .then((result) => {
         if (result.data.insertedId) {
           Swal.fire({

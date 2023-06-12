@@ -28,7 +28,7 @@ const Checkout = ({ cart, price }) => {
 
 
 	// useEffect(()=>{
-	// 	fetch(`https://dance-studio-server-kamruzzaman22874.vercel.app/selectedClass/${user?.email}`)
+	// 	fetch(`https://dance-studio-server.vercel.app/selectedClass/${user?.email}`)
 	// 	.then(res => res.json())
 	// 	.then(data => {
 	// 		console.log(data);

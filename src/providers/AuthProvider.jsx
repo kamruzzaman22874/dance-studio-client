@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
 			// get and set token
 
 			if (currentUser) {
-				axios.post('https://dance-studio-server-kamruzzaman22874.vercel.app/jwt', { email: currentUser?.email })
+				axios.post('https://dance-studio-server.vercel.app/jwt', { email: currentUser?.email })
 					.then((data) => {
 						// setToken(data.data.token);
 						if (data?.data) {

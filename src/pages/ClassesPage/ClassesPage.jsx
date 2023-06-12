@@ -4,7 +4,7 @@ import ClassPage from "./ClassPage";
 const ClassesPage = () => {
     const [classes, setClasses] = useState([]);
 	useEffect(() => {
-	fetch(`https://dance-studio-server-kamruzzaman22874.vercel.app/instructorStatus/approved`)
+	fetch(`https://dance-studio-server.vercel.app/instructorStatus/approved`)
     .then((res) => res.json())
     .then((data) => {
       setClasses(data);

@@ -23,7 +23,7 @@ const SignUp = () => {
           email: data.email,
           image: data.photo,
         };
-        fetch("https://dance-studio-server-kamruzzaman22874.vercel.app/users", {
+        fetch("https://dance-studio-server.vercel.app/users", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(saveUser),
