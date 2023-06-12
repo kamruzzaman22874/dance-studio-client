@@ -26,14 +26,19 @@ const ManageClasses = () => {
   });
 
   const handleApproveStatus = (item) => {
-    axiosSecure.patch(`/classes/approve/${item._id}`).then((data) => {
-      Swal.fire({
+    
+    axiosSecure.patch(`/classes/approve/${item._id}`)
+    .then((data) => {
+    if(data.data.modifiedCount > 0){
+      refetch()
+       Swal.fire({
         position: "top-end",
         icon: "success",
         title: "approve done",
         showConfirmButton: false,
         timer: 1500,
       });
+    }
     });
   };
   const handleDenyStatus = async(item) => {
@@ -55,6 +60,7 @@ const ManageClasses = () => {
             })
             .then(result => {
               if(result.data.modifiedCount>0){
+                refetch()
                 Swal.fire({
                   position: "top-end",
                   icon: "success",
